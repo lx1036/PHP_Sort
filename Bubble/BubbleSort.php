@@ -58,8 +58,15 @@ class BubbleSort{
     }
 }
 
-$arr = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
-$str = 'lhsgdfeswqt';
+//$arr = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
+//$str = 'lhsgdfeswqt';
 $sort = new BubbleSort();
-var_dump($sort->arrayBubbleSort($arr));
-var_dump($sort->stringBubbleSort($str));
+//var_dump($sort->arrayBubbleSort($arr));
+//var_dump($sort->stringBubbleSort($str));
+
+$arr2 = array_rand(range(1, 1000), 500);
+shuffle($arr2);
+$time1 = microtime(true);
+$sort->arrayBubbleSort($arr2);
+$time2 = microtime(true);
+echo (($time2 - $time1)*1000).'ms';
