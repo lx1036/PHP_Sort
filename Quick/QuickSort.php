@@ -32,11 +32,14 @@ class QuickSort{
         $left  = $right = [];
 
         for($i=1; $i<$count; $i++){
-            if($data[$i] < $mid){
-                $left[] = $data[$i];
-            }else{
-                $right[] = $data[$i];
-            }
+
+            ($data[$i] < $mid) ? $left[] = $data[$i] :$right[]=$data[$i];
+
+//            if($data[$i] < $mid){
+//                $left[] = $data[$i];
+//            }else{
+//                $right[] = $data[$i];
+//            }
         }
 
         $left  = $this->arrayQuickSort($left);
@@ -47,15 +50,15 @@ class QuickSort{
 
 }
 
-//$arr = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
+$arr = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
 
 $quickSort = new QuickSort();
 
-$arr2 = array_rand(range(1, 1000), 500);
-shuffle($arr2);
-$time1 = microtime(true);
-$quickSort->arrayQuickSort($arr2);
-$time2 = microtime(true);
-echo (($time2 - $time1)*1000).'ms';
+//$arr2 = array_rand(range(1, 1000), 500);
+//shuffle($arr2);
+//$time1 = microtime(true);
+//$quickSort->arrayQuickSort($arr2);
+//$time2 = microtime(true);
+//echo (($time2 - $time1)*1000).'ms';
 
-//var_dump($quickSort->arrayQuickSort($arr));
+var_dump($quickSort->arrayQuickSort($arr));
