@@ -24,11 +24,9 @@ class BubbleSort{
         $count = count($data);
         for($i=0; $i<$count; $i++){
             for($j=0; $j<$count-1-$i; $j++){
-//        for($j=0; $j<$count-1; $j++){
+//        for($j=0; $j<$count-1; $j++){//这样也可以,不过多了$i次比较
                 if($data[$j] > $data[$j+1]){
-                    $tmp        = $data[$j];
-                    $data[$j]   = $data[$j+1];
-                    $data[$j+1] = $tmp;
+                    $this->swap($data[$j], $data[$j+1]);
                 }
             }
         }
@@ -47,27 +45,38 @@ class BubbleSort{
         for($i=0; $i<$count; $i++){
             for($j=0; $j<$count-1-$i; $j++){
                 if($str[$j] > $str[$j+1]){
-                    $tmp       = $str[$j];
-                    $str[$j]   = $str[$j+1];
-                    $str[$j+1] = $tmp;
+                    $this->swap($str[$j], $str[$j+1]);
                 }
             }
         }
 
         return $str;
     }
+
+    /**
+     * 交换变量值
+     * @param $var1
+     * @param $var2
+     */
+    public function swap(&$var1, &$var2)
+    {
+        $tmp  = $var1;
+        $var1 = $var2;
+        $var2 = $tmp;
+    }
 }
 
-$arr = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
-$str = 'SegmentFault';
-$arr2 = array_rand(range(1, 1000), 500);
+$arr   = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
+$str   = 'SegmentFault';
+$arr2  = array_rand(range(1, 1000), 500);
 shuffle($arr2);
 
-$sort = new BubbleSort();
+$sort  = new BubbleSort();
 
 $time1 = microtime(true);
-$bubbleArr = $sort->arrayBubbleSort($arr);
+//$bubbleArr = $sort->arrayBubbleSort($arr);
+$bubbleArr = $sort->arrayBubbleSort($arr2);//316.018104553ms
 $time2 = microtime(true);
 
-var_dump($bubbleArr);
+//var_dump($bubbleArr);
 echo (($time2 - $time1)*1000).'ms'.PHP_EOL;

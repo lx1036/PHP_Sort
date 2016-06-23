@@ -8,7 +8,6 @@
 
 class QuickSort{
 
-
     /**
      * 递归
      *
@@ -42,13 +41,15 @@ class QuickSort{
 }
 
 $arr       = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
-$quickSort = new QuickSort();
 $arr2      = array_rand(range(1, 1000), 500);
 shuffle($arr2);
 
+$quickSort = new QuickSort();
+
 $time1     = microtime(true);
-$quickArr  = $quickSort->arrayQuickSort($arr);
+//$quickArr  = $quickSort->arrayQuickSort($arr);
+$quickArr  = $quickSort->arrayQuickSort($arr2);//11.8780136108ms
 $time2     = microtime(true);
 
-var_dump($quickArr);
+//var_dump($quickArr);
 echo (($time2 - $time1)*1000).'ms'.PHP_EOL;
