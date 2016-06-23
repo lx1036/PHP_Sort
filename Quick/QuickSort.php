@@ -30,18 +30,9 @@ class QuickSort{
         }
         $mid   = $data[0];
         $left  = $right = [];
-
         for($i=1; $i<$count; $i++){
-
             ($data[$i] < $mid) ? $left[] = $data[$i] :$right[]=$data[$i];
-
-//            if($data[$i] < $mid){
-//                $left[] = $data[$i];
-//            }else{
-//                $right[] = $data[$i];
-//            }
         }
-
         $left  = $this->arrayQuickSort($left);
         $right = $this->arrayQuickSort($right);
 

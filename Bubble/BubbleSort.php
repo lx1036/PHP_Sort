@@ -59,7 +59,7 @@ class BubbleSort{
 }
 
 //$arr = [5, 4, 5, 3, 8, 10, 3, 2, 4, 7];
-//$str = 'lhsgdfeswqt';
+//$str = 'SegmentFault';
 $sort = new BubbleSort();
 //var_dump($sort->arrayBubbleSort($arr));
 //var_dump($sort->stringBubbleSort($str));
@@ -69,4 +69,4 @@ shuffle($arr2);
 $time1 = microtime(true);
 $sort->arrayBubbleSort($arr2);
 $time2 = microtime(true);
-echo (($time2 - $time1)*1000).'ms';
+echo (($time2 - $time1)*1000).'ms'.PHP_EOL;
